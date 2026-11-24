@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Misión Meteorito · Unidad 2 · Portafolio</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body style="--accent: var(--u2)">
+  <nav class="nav">
+    <div class="wrap">
+      <a class="logo" href="index.html">Juan Domingo Pastorino <span>· Portafolio</span></a>
+      <button class="nav-toggle" aria-label="Abrir menú">☰</button>
+      <ul>
+        <li><a href="index.html#unidad-1">Sonoras</a></li>
+        <li><a class="active" href="index.html#unidad-2">Físicas</a></li>
+        <li><a href="index.html#unidad-3">Gráficas</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <header class="ficha-hero">
+    <div class="wrap">
+      <a class="back" href="index.html#unidad-2">← Volver al portafolio</a>
+      <p class="kicker u2" style="margin:18px 0 0">Unidad 2 · Interfaces Físicas</p>
+      <h1>Misión Meteorito</h1>
+      <p class="lead">Un controlador físico tipo arcade, con fader y botón, que traduce cada gesto de la mano en una respuesta inmediata en pantalla: un juego de naves y un panel que muestra la señal en vivo.</p>
+      <div class="links-bar">
+        <a class="btn solid" href="https://juandomingoo.github.io/controlador-fisico-entrega1/" target="_blank" rel="noopener">Probar demo ↗</a>
+        <a class="btn" href="https://github.com/juandomingoo/controlador-fisico-entrega1" target="_blank" rel="noopener">Repositorio ↗</a>
+      </div>
+      <div class="facts">
+        <div><small>Unidad</small><span>2 · Físicas</span></div>
+        <div><small>Autor</small><span>Juan Domingo Pastorino</span></div>
+        <div><small>Hardware</small><span>Arduino Uno, fader, botón</span></div>
+        <div><small>Software</small><span>Arduino IDE, Web Serial</span></div>
+      </div>
+
+      <!-- VIDEO: pega el link de YouTube o Google Drive dentro de data-video="" -->
+      <div class="video" data-video="">
+        <div class="pending"><img src="img/u2-dashboard.jpg" alt=""><div><b>Video próximamente</b>Registro del controlador en uso</div></div>
+      </div>
+    </div>
+  </header>
+
+  <div class="wrap ficha-grid">
+    <aside class="toc">
+      <a href="#concepto">Concepto</a>
+      <a href="#experiencia">Experiencia y público</a>
+      <a href="#funcionamiento">Cómo funciona</a>
+      <a href="#tecnologia">Tecnología</a>
+      <a href="#proceso">Proceso</a>
+      <a href="#aprendizajes">Aprendizajes</a>
+    </aside>
+
+    <article class="ficha-content">
+      <section id="concepto">
+        <h2>Concepto</h2>
+        <p>Una caja con dos controles físicos, un <b>fader</b> y un <b>botón arcade</b>, conectados a un Arduino Uno. El Arduino lee ambos controles y envía sus valores al computador por USB unas 50 veces por segundo. Una página web los recibe con la Web Serial API y los muestra en dos zonas:</p>
+        <ul>
+          <li><b>Misión</b>: un juego donde el fader mueve la nave y el botón dispara contra meteoritos y naves enemigas.</li>
+          <li><b>Panel técnico</b>: el nivel del fader, el estado del botón y un gráfico de la señal de los últimos 6 segundos, para demostrar que la lectura es continua, inmediata y sin ruido.</li>
+        </ul>
+      </section>
+
+      <section id="experiencia">
+        <h2>Experiencia y público</h2>
+        <p>Toma como referentes los controladores MIDI, los pedales de efectos y las consolas arcade: controles que se entienden con solo tocarlos. Está pensado para demostraciones en vivo, como una clase, una muestra o un stand, donde cualquier persona pueda tomar el controlador y jugar sin explicación. El panel técnico está dirigido a quien quiera entender cómo viaja la señal desde el hardware hasta la web.</p>
+      </section>
+
+      <section id="funcionamiento">
+        <h2>Cómo funciona</h2>
+        <div class="diagram">
+          <div class="box">Fader + botón<small>gesto físico</small></div><span class="arrow">→</span>
+          <div class="box">Arduino Uno<small>A0 y pin 2</small></div><span class="arrow">→</span>
+          <div class="box">USB serial<small>"boton,fader" · 115200</small></div><span class="arrow">→</span>
+          <div class="box">Web Serial API<small>Chrome / Edge</small></div><span class="arrow">→</span>
+          <div class="box">Juego + panel<small>Canvas 2D</small></div>
+        </div>
+        <h3>Conexiones</h3>
+        <table>
+          <tr><th>Componente</th><th>Patita</th><th>Arduino</th></tr>
+          <tr><td>Fader</td><td>Extremo</td><td>5V</td></tr>
+          <tr><td>Fader</td><td>Cursor</td><td>A0</td></tr>
+          <tr><td>Fader</td><td>Otro extremo</td><td>GND</td></tr>
+          <tr><td>Botón</td><td>COM</td><td>GND</td></tr>
+          <tr><td>Botón</td><td>NO</td><td>Pin 2 (INPUT_PULLUP)</td></tr>
+        </table>
+        <p style="margin-top:12px">El botón tiene antirrebote de 15 ms y el fader se promedia en 8 lecturas para eliminar el ruido.</p>
+      </section>
+
+      <section id="tecnologia">
+        <h2>Tecnología</h2>
+        <table>
+          <tr><th>Tipo</th><th>Detalle</th></tr>
+          <tr><td>Microcontrolador</td><td>Arduino Uno R3</td></tr>
+          <tr><td>Entradas</td><td>Fader deslizante 10 kΩ (doble, 6 patitas) · botón arcade con microswitch</td></tr>
+          <tr><td>Shield</td><td>Placa perforada 5 × 7 cm soldada con estaño, removible</td></tr>
+          <tr><td>Caja</td><td>Diseñada en Rhino, preparada en Bambu Studio</td></tr>
+          <tr><td>Firmware</td><td>Arduino IDE, sin librerías externas</td></tr>
+          <tr><td>Web</td><td>HTML, CSS y JavaScript · Web Serial API · Canvas 2D</td></tr>
+        </table>
+      </section>
+
+      <section id="proceso">
+        <h2>Proceso</h2>
+        <ul class="timeline">
+          <li><b>Ideación</b>Se evaluaron varias ideas (consola "ON AIR", pedal de guitarra, termostato, cohete…) y se eligió una caja tipo controlador con fader y botón.</li>
+          <li><b>El fader misterioso</b>El fader tenía 6 patitas sin marcas. Se escribió un código "detective" con INPUT_PULLUP para descubrir, moviéndolo, cuál era el cursor.</li>
+          <li><b>Shield sin headers</b>Sin pines header disponibles, se usaron las puntas metálicas de cables jumper soldadas a la placa perforada.</li>
+          <li><b>Problemas de puerto</b>Los errores "COM3" y "Acceso denegado" se resolvieron eligiendo el puerto correcto y cerrando el Monitor Serial antes de subir el código.</li>
+          <li><b>Iteraciones de la caja</b>De la caja original en Rhino (paredes de 0,5 mm) a la v2 atornillada y la v3 con tapa a presión, más una alternativa de corte láser en MDF.</li>
+          <li><b>Software</b>Juego y panel técnico, luego naves enemigas y dificultad que sube cada 20 segundos.</li>
+        </ul>
+        <div class="gallery" style="margin-top:12px">
+          <figure><img src="img/u2-caja.jpg" alt="Caja terminada" data-ph="Foto de la caja terminada"><figcaption>Caja terminada</figcaption></figure>
+          <figure><img src="img/u2-shield.jpg" alt="Shield soldado" data-ph="Foto del shield soldado"><figcaption>Shield soldado</figcaption></figure>
+          <figure><img src="img/u2-dashboard.jpg" alt="Panel de control"><figcaption>Panel de control y juego</figcaption></figure>
+          <figure><img src="img/u2-proceso.jpg" alt="Proceso de armado" data-ph="Foto del armado / pruebas"><figcaption>Armado y pruebas</figcaption></figure>
+        </div>
+      </section>
+
+      <section id="aprendizajes">
+        <h2>Aprendizajes</h2>
+        <ul>
+          <li>Medir las piezas reales antes de diseñar la caja.</li>
+          <li>Usar headers macho para un shield más firme y fácil de montar.</li>
+          <li>Considerar las horas de impresión y la fila del laboratorio en la planificación.</li>
+          <li>Rotular en el shield qué cable va a cada pin.</li>
+        </ul>
+      </section>
+    </article>
+  </div>
+
+  <footer>
+    <div class="wrap">
+      <a href="boton-interactivo.html">← Botón interactivo</a>
+      <a href="atrapar-la-nube.html">Siguiente: Atrapar la nube →</a>
+    </div>
+  </footer>
+  <script src="js/site.js"></script>
+</body>
+</html>

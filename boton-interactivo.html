@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Botón interactivo · Unidad 1 · Portafolio</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body style="--accent: var(--u1)">
+  <nav class="nav">
+    <div class="wrap">
+      <a class="logo" href="index.html">Juan Domingo Pastorino <span>· Portafolio</span></a>
+      <button class="nav-toggle" aria-label="Abrir menú">☰</button>
+      <ul>
+        <li><a class="active" href="index.html#unidad-1">Sonoras</a></li>
+        <li><a href="index.html#unidad-2">Físicas</a></li>
+        <li><a href="index.html#unidad-3">Gráficas</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <header class="ficha-hero">
+    <div class="wrap">
+      <a class="back" href="index.html#unidad-1">← Volver al portafolio</a>
+      <p class="kicker u1" style="margin:18px 0 0">Unidad 1 · Interfaces Sonoras</p>
+      <h1>Botón interactivo</h1>
+      <p class="lead">Un botón blando que, al presionarlo, cierra un circuito hecho a mano y dispara un sonido en el computador: la lógica de un museo interactivo, llevada al plano sonoro.</p>
+      <div class="links-bar">
+        <!-- Cuando tengas el link del juego/sonido y el repo, reemplaza href="#" y quita la clase disabled -->
+        <a class="btn solid disabled" href="#" target="_blank" rel="noopener">Probar demo ↗</a>
+        <a class="btn disabled" href="#" target="_blank" rel="noopener">Repositorio ↗</a>
+      </div>
+      <div class="facts">
+        <div><small>Unidad</small><span>1 · Sonoras</span></div>
+        <div><small>Equipo</small><span>Juan Domingo Pastorino, Pedro Claro</span></div>
+        <div><small>Técnica</small><span>Keyboard hack</span></div>
+        <div><small>Entrega</small><span>10 de septiembre</span></div>
+      </div>
+
+      <!-- VIDEO: pega el link de YouTube o Google Drive dentro de data-video="" -->
+      <div class="video" data-video="">
+        <div class="pending"><img src="img/u1-boton.jpg" alt=""><div><b>Video próximamente</b>Registro del botón funcionando</div></div>
+      </div>
+    </div>
+  </header>
+
+  <div class="wrap ficha-grid">
+    <aside class="toc">
+      <a href="#concepto">Concepto</a>
+      <a href="#experiencia">Experiencia y público</a>
+      <a href="#funcionamiento">Cómo funciona</a>
+      <a href="#tecnologia">Tecnología</a>
+      <a href="#proceso">Proceso</a>
+    </aside>
+
+    <article class="ficha-content">
+      <section id="concepto">
+        <h2>Concepto</h2>
+        <p>Un botón interactivo cuyo interior contiene una esponja. Al presionarlo, la esponja se comprime y hace que dos cables entren en contacto con una placa de aluminio. Eso cierra el circuito de una tecla de un teclado hackeado y dispara el sonido asociado.</p>
+        <h3>Inspiración: el zoótropo del MIM</h3>
+        <p>En el zoótropo del Museo Interactivo Mirador, presionar un botón hace girar una plataforma con figuras que, por persistencia visual, parecen moverse. Trasladamos esa misma lógica de activación por botón al plano sonoro: al presionarlo, en vez de una ilusión visual, se dispara un estímulo auditivo inmediato.</p>
+      </section>
+
+      <section id="experiencia">
+        <h2>Experiencia y público</h2>
+        <p>La interacción busca ser inmediata y sin instrucciones: un objeto blando que invita a ser presionado y responde con sonido en el mismo instante. Está pensado para espacios como un museo interactivo, donde niños, niñas y familias exploran por su cuenta y aprenden la relación causa-efecto tocando.</p>
+      </section>
+
+      <section id="funcionamiento">
+        <h2>Cómo funciona</h2>
+        <div class="diagram">
+          <div class="box">Botón + esponja<small>se presiona y se aplasta</small></div><span class="arrow">→</span>
+          <div class="box">Cables y aluminio<small>se cierra el contacto</small></div><span class="arrow">→</span>
+          <div class="box">Teclado hackeado<small>equivale a la tecla Q</small></div><span class="arrow">→</span>
+          <div class="box">Computador<small>evento keydown</small></div><span class="arrow">→</span>
+          <div class="box">Software de audio<small>reproduce el sonido</small></div>
+        </div>
+        <ol style="margin-top:20px">
+          <li>La persona presiona el botón.</li>
+          <li>La esponja interna se aplasta y empuja los cables hacia la placa de aluminio, cerrando el contacto eléctrico.</li>
+          <li>Ese contacto equivale a presionar la tecla <b>Q</b> del teclado hackeado.</li>
+          <li>El software detecta el evento de esa tecla y reproduce el sonido en tiempo real.</li>
+        </ol>
+      </section>
+
+      <section id="tecnologia">
+        <h2>Tecnología y materiales</h2>
+        <table>
+          <tr><th>Elemento</th><th>Detalle</th></tr>
+          <tr><td>Interruptor</td><td>Esponja, dos cables y una placa de aluminio (contacto por presión)</td></tr>
+          <tr><td>Interfaz con el computador</td><td>Placa de un teclado USB hackeado (tecla Q)</td></tr>
+          <tr><td>Software</td><td>Programa que escucha la tecla y reproduce el sonido (ver repositorio)</td></tr>
+          <tr><td>Carcasa</td><td>Caja y botón cilíndrico blancos</td></tr>
+        </table>
+      </section>
+
+      <section id="proceso">
+        <h2>Proceso</h2>
+        <ul class="timeline">
+          <li><b>Referente</b>Visita y análisis del zoótropo del MIM: un botón como detonante de una experiencia.</li>
+          <li><b>Idea</b>Llevar la activación por botón al sonido, con un interruptor blando hecho a mano.</li>
+          <li><b>Keyboard hack</b>Identificar en la placa del teclado los contactos de una tecla y conectarlos al botón.</li>
+          <li><b>Prototipo</b>Botón con esponja y placa de aluminio dentro de la caja; pruebas de presión y contacto.</li>
+          <li><b>Software</b>Programa que asocia la tecla a un sonido y lo reproduce sin retardo.</li>
+        </ul>
+        <div class="gallery" style="margin-top:12px">
+          <figure><img src="img/u1-boton.jpg" alt="Botón interactivo terminado"><figcaption>Prototipo final</figcaption></figure>
+          <figure><img src="img/u1-proceso-1.jpg" alt="Proceso" data-ph="Foto del proceso (interior, cables, teclado)"><figcaption>Interior y conexiones</figcaption></figure>
+        </div>
+      </section>
+    </article>
+  </div>
+
+  <footer>
+    <div class="wrap">
+      <a href="index.html">← Volver al portafolio</a>
+      <a href="mision-meteorito.html">Siguiente: Misión Meteorito →</a>
+    </div>
+  </footer>
+  <script src="js/site.js"></script>
+</body>
+</html>

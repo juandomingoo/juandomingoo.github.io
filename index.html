@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Portafolio · Juan Domingo Pastorino · Taller de Diseño de Interfaces</title>
+  <meta name="description" content="Portafolio del Taller de Diseño de Interfaces: interfaces sonoras, físicas y gráficas.">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <nav class="nav">
+    <div class="wrap">
+      <a class="logo" href="index.html">Juan Domingo Pastorino <span>· Portafolio</span></a>
+      <button class="nav-toggle" aria-label="Abrir menú">☰</button>
+      <ul>
+        <li><a href="#unidad-1">Sonoras</a></li>
+        <li><a href="#unidad-2">Físicas</a></li>
+        <li><a href="#unidad-3">Gráficas</a></li>
+        <li><a href="https://github.com/juandomingoo" target="_blank" rel="noopener">GitHub ↗</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="wrap">
+      <span class="kicker">Taller de Diseño de Interfaces · UAI · 2026</span>
+      <h1>Del sonido al gesto: <em>tres formas</em> de interactuar.</h1>
+      <p class="lead">Un semestre diseñando interfaces que se escuchan, se tocan y se miran. Aquí están todos los proyectos del taller, con su proceso, su código en GitHub y su registro en video.</p>
+      <div class="meta">
+        <span class="pill"><i style="background:var(--u1)"></i> 1 · Interfaces Sonoras</span>
+        <span class="pill"><i style="background:var(--u2)"></i> 2 · Interfaces Físicas</span>
+        <span class="pill"><i style="background:var(--u3)"></i> 3 · Interfaces Gráficas</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <div class="units-map">
+      <a class="unit-tile" href="#unidad-1"><span class="num u1">Unidad 1</span><b>Sonoras</b><small>Keyboard hack · sonido en tiempo real</small></a>
+      <a class="unit-tile" href="#unidad-2"><span class="num u2">Unidad 2</span><b>Físicas</b><small>Arduino · fader, botón y Web Serial</small></a>
+      <a class="unit-tile" href="#unidad-3"><span class="num u3">Unidad 3</span><b>Gráficas</b><small>MediaPipe · Three.js · AR · VR</small></a>
+    </div>
+
+    <!-- UNIDAD 1 -->
+    <section class="unit" id="unidad-1">
+      <div class="unit-head u1">
+        <h2>Unidad 1 · Interfaces Sonoras</h2>
+        <p>Objetos cotidianos convertidos en instrumentos: un circuito simple que dispara sonido al ser tocado.</p>
+      </div>
+      <article class="project">
+        <div class="shot"><img src="img/u1-boton.jpg" alt="Botón interactivo: caja blanca con un botón cilíndrico" data-ph="Foto del botón"></div>
+        <div class="body">
+          <span class="tag u1">Proyecto · Keyboard hack</span>
+          <h3>Botón interactivo</h3>
+          <p>Un botón con una esponja en su interior: al presionarlo, dos cables tocan una placa de aluminio, cierran el circuito de una tecla de un teclado hackeado y disparan un sonido. Inspirado en el zoótropo del MIM.</p>
+          <div class="chips"><span class="chip">Keyboard hack</span><span class="chip">Circuito por contacto</span><span class="chip">Audio en tiempo real</span></div>
+          <div class="actions">
+            <a class="btn solid" href="boton-interactivo.html">Ver ficha</a>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <!-- UNIDAD 2 -->
+    <section class="unit" id="unidad-2">
+      <div class="unit-head u2">
+        <h2>Unidad 2 · Interfaces Físicas</h2>
+        <p>Hardware propio: sensores, soldadura y una caja diseñada para el uso, conectados a la web en tiempo real.</p>
+      </div>
+      <article class="project">
+        <div class="shot"><img src="img/u2-dashboard.jpg" alt="Panel de control con el juego Misión Meteorito"></div>
+        <div class="body">
+          <span class="tag u2">Proyecto · Controlador físico</span>
+          <h3>Misión Meteorito</h3>
+          <p>Un controlador tipo arcade con Arduino, un fader y un botón, soldado en un shield propio dentro de una caja diseñada en Rhino. Controla un juego de naves y un panel técnico que muestra la señal en vivo.</p>
+          <div class="chips"><span class="chip">Arduino Uno</span><span class="chip">Web Serial API</span><span class="chip">Canvas 2D</span><span class="chip">Rhino</span></div>
+          <div class="actions">
+            <a class="btn solid" href="mision-meteorito.html">Ver ficha</a>
+            <a class="btn" href="https://juandomingoo.github.io/controlador-fisico-entrega1/" target="_blank" rel="noopener">Probar demo ↗</a>
+            <a class="btn" href="https://github.com/juandomingoo/controlador-fisico-entrega1" target="_blank" rel="noopener">Repositorio ↗</a>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <!-- UNIDAD 3 -->
+    <section class="unit" id="unidad-3">
+      <div class="unit-head u3">
+        <h2>Unidad 3 · Interfaces Gráficas</h2>
+        <p>Interfaces naturales en el navegador: visión por computador, realidad aumentada y realidad virtual.</p>
+      </div>
+      <article class="project">
+        <div class="shot"><img src="img/u3-juego.jpg" alt="Atrapar la nube: malla atrapanieblas en un cerro del desierto"></div>
+        <div class="body">
+          <span class="tag u3">Proyecto final · Chile Re-Descubre</span>
+          <h3>Atrapar la nube</h3>
+          <p>Una pieza interactiva sobre los atrapanieblas de Carlos Espinosa: con tu propia mano, frente a la cámara, tiendes la malla, la orientas contra el viento y llevas el agua de la camanchaca al estanque hasta que el desierto florece.</p>
+          <div class="chips"><span class="chip">MediaPipe Hands</span><span class="chip">Three.js</span><span class="chip">Web Audio</span></div>
+          <div class="actions">
+            <a class="btn solid" href="atrapar-la-nube.html">Ver ficha</a>
+            <a class="btn" href="https://juandomingoo.github.io/atrapar-la-nube/" target="_blank" rel="noopener">Jugar ↗</a>
+            <a class="btn" href="https://github.com/juandomingoo/atrapar-la-nube" target="_blank" rel="noopener">Repositorio ↗</a>
+          </div>
+        </div>
+      </article>
+
+      <div class="minis">
+        <a class="mini" href="https://juandomingoo.github.io/unidad-3-ejercicios/modulo-01-mediapipe/" target="_blank" rel="noopener">
+          <div class="shot"><img src="img/u3-modulo01.jpg" alt="Crónicas del Santuario"></div>
+          <div class="body"><span class="tag u3">Módulo 01 · MediaPipe</span><h4>Crónicas del Santuario ↗</h4><p>RPG en 3D que se juega con 7 gestos de la mano.</p></div>
+        </a>
+        <a class="mini" href="https://juandomingoo.github.io/unidad-3-ejercicios/modulo-02-arjs/" target="_blank" rel="noopener">
+          <div class="shot"><img src="img/u3-modulo02.jpg" alt="Marcador Hiro" style="object-fit:contain;background:#fff"></div>
+          <div class="body"><span class="tag u3">Módulo 02 · AR.js</span><h4>Atrapanieblas en tu mesa ↗</h4><p>Realidad aumentada con marcador: un atrapanieblas 3D sobre la mesa.</p></div>
+        </a>
+        <a class="mini" href="https://juandomingoo.github.io/unidad-3-ejercicios/modulo-03-aframe/" target="_blank" rel="noopener">
+          <div class="shot"><img src="img/u3-modulo03.jpg" alt="Mirador de la camanchaca"></div>
+          <div class="body"><span class="tag u3">Módulo 03 · A-Frame</span><h4>Mirador de la camanchaca ↗</h4><p>Escena VR 360° con mirada (gaze), audio espacial y recorrido.</p></div>
+        </a>
+      </div>
+      <p style="margin-top:14px;font-size:14px;color:var(--muted)">Código de los ejercicios: <a href="https://github.com/juandomingoo/unidad-3-ejercicios" target="_blank" rel="noopener">github.com/juandomingoo/unidad-3-ejercicios</a></p>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <span>Juan Domingo Pastorino · Taller de Diseño de Interfaces · Universidad Adolfo Ibáñez · 2026</span>
+      <a href="https://github.com/juandomingoo" target="_blank" rel="noopener">github.com/juandomingoo</a>
+    </div>
+  </footer>
+  <script src="js/site.js"></script>
+</body>
+</html>

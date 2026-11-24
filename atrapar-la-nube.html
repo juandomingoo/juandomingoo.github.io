@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Atrapar la nube · Unidad 3 · Portafolio</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body style="--accent: var(--u3)">
+  <nav class="nav">
+    <div class="wrap">
+      <a class="logo" href="index.html">Juan Domingo Pastorino <span>· Portafolio</span></a>
+      <button class="nav-toggle" aria-label="Abrir menú">☰</button>
+      <ul>
+        <li><a href="index.html#unidad-1">Sonoras</a></li>
+        <li><a href="index.html#unidad-2">Físicas</a></li>
+        <li><a class="active" href="index.html#unidad-3">Gráficas</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <header class="ficha-hero">
+    <div class="wrap">
+      <a class="back" href="index.html#unidad-3">← Volver al portafolio</a>
+      <p class="kicker u3" style="margin:18px 0 0">Unidad 3 · Interfaces Gráficas · Proyecto final</p>
+      <h1>Atrapar la nube</h1>
+      <p class="lead">En uno de los desiertos más áridos del mundo, el agua no cae del cielo: flota. Una pieza interactiva para el concurso <i>Chile Re-Descubre</i>, donde tu mano reemplaza a la de Carlos Espinosa, el inventor del atrapanieblas.</p>
+      <div class="links-bar">
+        <a class="btn solid" href="https://juandomingoo.github.io/atrapar-la-nube/" target="_blank" rel="noopener">Jugar ↗</a>
+        <a class="btn" href="https://github.com/juandomingoo/atrapar-la-nube" target="_blank" rel="noopener">Repositorio ↗</a>
+      </div>
+      <div class="facts">
+        <div><small>Unidad</small><span>3 · Gráficas</span></div>
+        <div><small>Autor</small><span>Juan Domingo Pastorino</span></div>
+        <div><small>Hito</small><span>Atrapanieblas · Hecho en Chile</span></div>
+        <div><small>Tecnología</small><span>MediaPipe + Three.js</span></div>
+      </div>
+
+      <!-- VIDEO: pega el link de YouTube o Google Drive dentro de data-video="" -->
+      <div class="video" data-video="">
+        <div class="pending"><img src="img/u3-juego.jpg" alt=""><div><b>Video próximamente</b>Cápsula audiovisual de 1 minuto</div></div>
+      </div>
+    </div>
+  </header>
+
+  <div class="wrap ficha-grid">
+    <aside class="toc">
+      <a href="#concepto">Concepto</a>
+      <a href="#experiencia">Experiencia y público</a>
+      <a href="#funcionamiento">Cómo funciona</a>
+      <a href="#tecnologia">Tecnología</a>
+      <a href="#proceso">Proceso</a>
+      <a href="#ejercicios">Ejercicios de la unidad</a>
+    </aside>
+
+    <article class="ficha-content">
+      <section id="concepto">
+        <h2>Concepto</h2>
+        <p>En el norte de Chile casi nunca llueve, pero casi todas las mañanas la <b>camanchaca</b>, una niebla espesa que viene del Pacífico, cubre los cerros de la costa. En 1956, durante una sequía en Antofagasta, el físico <b>Carlos Espinosa Arancibia</b> pensó que si la niebla no cae, hay que salir a atraparla. Su patente fue cedida a la UNESCO para que cualquier comunidad pudiera usarla libremente.</p>
+        <p>En <i>Atrapar la nube</i> el usuario toma su lugar: con su propia mano tiende la malla, la orienta contra el viento y lleva el agua al estanque hasta que el desierto florece. La interacción hace sentir la idea central del invento: <b>el agua ya está en el aire; solo hay que saber dónde y cómo atraparla</b>.</p>
+      </section>
+
+      <section id="experiencia">
+        <h2>Experiencia y público</h2>
+        <p>Es una pieza de divulgación para público general, pensada para una muestra o exhibición, y se juega en un minuto sin instrucciones previas. Los gestos son naturales y tienen sentido dentro del relato: abrir la mano para tender la malla y cerrar el puño para recoger el agua. El relato avanza en cuatro momentos: la camanchaca, la idea de Espinosa, el cambio de viento y el desierto que florece.</p>
+        <table>
+          <tr><th>Gesto</th><th>Acción</th></tr>
+          <tr><td>✋ Mano abierta</td><td>Tiende la malla en el cerro</td></tr>
+          <tr><td>↔️ Mover la mano</td><td>Orienta la malla de frente al viento</td></tr>
+          <tr><td>✊ Puño</td><td>El agua baja por la canaleta al estanque</td></tr>
+          <tr><td>🌬️ Cambio de viento</td><td>A mitad de camino hay que reorientar la malla</td></tr>
+        </table>
+      </section>
+
+      <section id="funcionamiento">
+        <h2>Cómo funciona</h2>
+        <div class="diagram">
+          <div class="box">Cámara<small>webcam</small></div><span class="arrow">→</span>
+          <div class="box">MediaPipe<small>21 puntos de la mano</small></div><span class="arrow">→</span>
+          <div class="box">Gesto<small>abierta / puño / posición</small></div><span class="arrow">→</span>
+          <div class="box">Simulación<small>niebla y malla</small></div><span class="arrow">→</span>
+          <div class="box">Three.js<small>escena 3D + sonido</small></div>
+        </div>
+        <p style="margin-top:16px">El gesto se calcula contando los dedos extendidos: un dedo está extendido cuando su punta queda más lejos de la muñeca que su articulación media. La niebla son 2.000 partículas, y una gota queda atrapada solo cuando cruza el plano de la malla. Por eso la malla funciona de verdad solo si está de frente al viento.</p>
+      </section>
+
+      <section id="tecnologia">
+        <h2>Tecnología</h2>
+        <table>
+          <tr><th>Tipo</th><th>Detalle</th></tr>
+          <tr><td>Visión por computador</td><td>MediaPipe Tasks Vision · Hand Landmarker</td></tr>
+          <tr><td>Gráficos 3D</td><td>Three.js: terreno generado por código, partículas, vegetación instanciada</td></tr>
+          <tr><td>Sonido</td><td>Web Audio API, todo generado en código (viento, gotas, acorde final)</td></tr>
+          <tr><td>Publicación</td><td>GitHub Pages, sin servidor ni instalación</td></tr>
+        </table>
+      </section>
+
+      <section id="proceso">
+        <h2>Proceso</h2>
+        <ul class="timeline">
+          <li><b>Elección del hito</b>Se compararon dos hitos de <i>Hecho en Chile</i>: el atrapanieblas y el sistema antisísmico. Se eligió el atrapanieblas por estar mejor documentado y por su potencial visual.</li>
+          <li><b>Interacción</b>Se buscó que cada gesto tuviera sentido en el relato: la mano como la malla que atrapa la nube.</li>
+          <li><b>Primer prototipo</b>La cámara miraba la malla de canto, y cuando quedaba de frente al viento casi no se veía. Se rediseñó la vista: ahora se mira desde tierra hacia el mar y la niebla viene hacia el usuario.</li>
+          <li><b>Más desafío</b>Tras probarlo, se agregó el cambio de viento a mitad de juego. Suma dificultad sin alargar la experiencia y además es fiel a la realidad: un atrapanieblas se instala según el viento de cada cerro.</li>
+          <li><b>Publicación</b>Versión ordenada en GitHub Pages, más una versión en un solo archivo para abrir sin servidor.</li>
+        </ul>
+        <div class="gallery" style="margin-top:12px">
+          <figure><img src="img/u3-intro.jpg" alt="Pantalla de inicio"><figcaption>Pantalla de inicio</figcaption></figure>
+          <figure><img src="img/u3-juego.jpg" alt="Juego"><figcaption>La malla atrapando la camanchaca</figcaption></figure>
+          <figure><img src="img/u3-final.jpg" alt="Final"><figcaption>El desierto florece</figcaption></figure>
+          <figure><img src="img/u3-prueba.jpg" alt="Prueba con usuario" data-ph="Foto de una persona jugando con la cámara"><figcaption>Prueba con usuario</figcaption></figure>
+        </div>
+      </section>
+
+      <section id="ejercicios">
+        <h2>Ejercicios de la unidad</h2>
+        <table>
+          <tr><th>Módulo</th><th>Ejercicio</th><th>Enlace</th></tr>
+          <tr><td>01 · MediaPipe</td><td>Crónicas del Santuario: RPG 3D con 7 gestos</td><td><a href="https://juandomingoo.github.io/unidad-3-ejercicios/modulo-01-mediapipe/" target="_blank" rel="noopener">Abrir ↗</a></td></tr>
+          <tr><td>02 · AR.js</td><td>Atrapanieblas en tu mesa (marcador Hiro)</td><td><a href="https://juandomingoo.github.io/unidad-3-ejercicios/modulo-02-arjs/" target="_blank" rel="noopener">Abrir ↗</a></td></tr>
+          <tr><td>03 · A-Frame</td><td>Mirador de la camanchaca: VR 360°</td><td><a href="https://juandomingoo.github.io/unidad-3-ejercicios/modulo-03-aframe/" target="_blank" rel="noopener">Abrir ↗</a></td></tr>
+        </table>
+      </section>
+    </article>
+  </div>
+
+  <footer>
+    <div class="wrap">
+      <a href="mision-meteorito.html">← Misión Meteorito</a>
+      <a href="index.html">Volver al portafolio →</a>
+    </div>
+  </footer>
+  <script src="js/site.js"></script>
+</body>
+</html>
